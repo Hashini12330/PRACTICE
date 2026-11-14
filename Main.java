@@ -1,45 +1,40 @@
 public class Main{
     public static void main(String[] args) {
-            Warrior warrior = new Warrior();
-            Monster monster = new Monster(warrior);
-            warrior.displayMonster();
+        Bicycle bike1 = new Bicycle(10);
+        Bicycle bike2 = new Bicycle(20);
+        Bicycle bike3 = new Bicycle(30);
+
+        System.out.println("Bike 1 ID: " + bike1.getId());
+        System.out.println("Bike 2 ID: " + bike2.getId());  
+        System.out.println("Bike 3 ID: " + bike3.getId());
+
+        System.out.println("Total number of bicycles: " + Bicycle.getNumOfBicycles());  // for static method we do not create an object to call it
 
     }
 }
 
+// static variable and method
+class Bicycle{
+    private int speed;
+    private int id;
 
-// Monster's details through the Warrior object.
-class Monster{
-    private String name;
+    private static int numOfBicycles = 0;
 
-    public Monster(String name){
-        this.name = name;
+    public Bicycle(int starSpeed){
+        speed = starSpeed;
+
+        numOfBicycles++;
+        id = numOfBicycles;
+
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public static int getNumOfBicycles(){
+        return numOfBicycles;
     }
 
 
-    // constructor receives a warrior obj
-    public Monster(Warrior warrior){
-        this.name = "Monster A";
-
-        // pass current monster obj to warrior obj
-        warrior.setMonster(this);
-    }
-
-    public void display(){
-        System.out.println("Monster's name: " + this.name);
-    }
-}
-
-
-class Warrior{
-    private Monster monster;
-
-    public void setMonster(Monster monster){
-        this.monster = monster;
-    }
-
-    public void displayMonster(){
-        monster.display();
-    }
-    
 }
