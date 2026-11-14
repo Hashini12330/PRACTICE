@@ -16,7 +16,7 @@ public class Main{
         // get data from Monster class
         Monster monster = new Monster();
         ob.steal(monster);
-
+        
     }
 }
 
@@ -45,6 +45,7 @@ class Mons{
         return this.age;
     }
 
+    // method to call loseStick() from Monster class
     public void steal(Monster mons){
         mons.loseStick();
     }
