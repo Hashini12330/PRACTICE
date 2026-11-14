@@ -1,27 +1,29 @@
 public class Main{
     public static void main(String[] args) {
-
-        Monster ob = new Monster();
-        System.out.println(ob.getName());   // You cannot call a constructor like a normal method.
+        Monster monster = new Monster();
+        monster.showName();
         
     }
 }
 
+// inside constructor use method to set value
 
-// constructor chain
 class Monster{
-    private String Name;
-
-    public Monster(String Name){
-        this.Name = Name;
-
-    }
+    private String name;
 
     public Monster(){
-        this("John");
+        this.setName("John");   // here use the setter method (setName()) to set the name
+    }
+
+    public void setName(String name){
+        this.name = name;
     }
 
     public String getName(){
-        return Name;
+        return this.name;
+    }
+
+    public void showName(){
+        System.out.println("Monster name is: " + this.name);
     }
 }
