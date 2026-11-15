@@ -1,17 +1,16 @@
 public class Main{
     public static void main(String[] args) {
         Monster monster = new Monster();
-        monster.name = "Goblin";
-        System.out.println(monster.name);
+        System.out.println("Read only value: " + monster.getName());
+        
 
     }
 }
 
 class Monster{
-    public String name;
+    private String name = "john";
 
-    public void setName(String name){
-        this.name = name;
+    public String getName(){
+        return name;    
     }
-
 }
