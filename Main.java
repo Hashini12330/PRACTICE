@@ -1,27 +1,19 @@
 public class Main{
     public static void main(String[] args) {
-        Monster obj = new Monster();
-        obj.setAge(25);
-        System.out.println(obj.getAge());
-
+        Monster monster = new Monster();
+        monster.setName("John");
+        monster.displayName();
     }
 }
 
-
 class Monster{
-    private int age;
+    private String name;
 
-    public void setAge(int age){
-        if(age >= 1){
-            this.age = age;
-        }else{
-            System.out.println("Age must be greater than 0");
-        }
-
+    public void setName(String name){
+        this.name = name;
     }
 
-    public int getAge(){
-        return age;
+    public void displayName(){
+        System.out.println("Monster's name is: " + name);
     }
-
 }
