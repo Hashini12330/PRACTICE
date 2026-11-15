@@ -1,57 +1,37 @@
 public class Main{
     public static void main(String[] args) {
 
-        // Calling static method from static context
-        Mons.test();
-
-        // Calling static method from non static context
-        Mons1.show();
-
-        // Calling non static method from static context
-        Mons2.test();
+        // 03
+        Iib1 obj1 = new Iib1();    // run when create object
+        System.out.println("=====================================");
 
 
 
-    }
-}
+        // 01 - show only first constructor
+        Iib obj = new Iib(25);    // run when create object
+        obj.display();
 
-class Mons{
-    static int age = 25;    // static variable
+        System.out.println("=====================================");
 
-    static void test(){ // static method
-        age = 15;   // allow to change static variable in static method
-        System.out.println("static variable wth static method: " + age);
-    }
-}
-
-
-class Mons1{
-    int age = 25; // non static variable
-    private static int Age = 30;
-
-    public static void show(){  // static method
-        System.out.println("Age: " + Age);
+        // 02 - only show second constructor
+        Iib obj2 = new Iib();    // run when create object
+        obj2.display();
 
         
-        Mons1 ob = new Mons1();
-        ob.age = 10;    //  allow with object of class
-        System.out.println("Age: " + ob.age);
     }
-
 }
 
 
-// Non static method can not be called in static method directly, we need to create object of class to call non static method
-class Mons2{
-    public void setDetails(){
-        System.out.println("This is non static method");
+class Iib1{
+    int age;
+
+    {
+        age = 15;
     }
 
-    public static void test(){
-        // setDetails(); // not allow to call non static method in static method
-
-        Mons2 ob = new Mons2(); // create object of class
-        ob.setDetails(); // allow to call non static method with object of class
+    public Iib1(){
+        System.out.println("Iib1 constructor1");
+        System.out.println("Iib1 constructor Age1: " + age);
 
     }
 
@@ -60,3 +40,40 @@ class Mons2{
 
 
 
+// IIB
+
+class Iib{
+    int age;
+
+    
+    public void display(){  // A normal method can access and use the value assigned inside an IIB (Instance Initialization Block) because both the IIB and normal method belong to the same object, and age is an instance variable.
+        System.out.println("IIB display Age: " + age);
+    }
+
+    public Iib(int age){
+        System.out.println("IIB constructor");
+        System.out.println("IIB constructor Age: " + age);
+    }
+
+    public Iib(){
+        System.out.println("IIB constructor 2");
+    }
+
+ 
+    {
+        age = 20;   
+        System.out.println("IIB block Age: " + age);
+    }
+
+        /*
+        Object creation
+        ````↓
+        IIB runs
+            ↓
+        Constructor runs
+        ````↓
+        Normal method runs
+        */
+    
+
+}
