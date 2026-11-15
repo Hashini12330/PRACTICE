@@ -1,27 +1,27 @@
 public class Main{
     public static void main(String[] args) {
-        Monster m1 = new Monster();
-        System.out.println("----------------------------------");
-        Monster m2 = new Monster();
+        Monster obj = new Monster();
+        obj.setAge(25);
+        System.out.println(obj.getAge());
+
     }
 }
 
-class Monster {
 
-    static int count;
+class Monster{
+    private int age;
 
-    // SIB
-    static {
-        System.out.println("SIB");
-        count = 10;
+    public void setAge(int age){
+        if(age >= 1){
+            this.age = age;
+        }else{
+            System.out.println("Age must be greater than 0");
+        }
+
     }
 
-    // IIB
-    {
-        System.out.println("IIB");
+    public int getAge(){
+        return age;
     }
 
-    Monster() {
-        System.out.println("Constructor");
-    }
 }
