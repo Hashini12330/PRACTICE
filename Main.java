@@ -1,16 +1,27 @@
 public class Main{
     public static void main(String[] args) {
-        Monster monster = new Monster();
-        System.out.println("Read only value: " + monster.getName());
-        
 
+        Dog dog = new Dog();
+        dog.name = "Tommy";
+        dog.eat();
+        dog.bark();
+        
     }
 }
 
-class Monster{
-    private String name = "john";
+class Animal{
+    String name;
 
-    public String getName(){
-        return name;    
+    void eat(){
+        System.out.println(name + " is eating");
     }
+
+}
+
+class Dog extends Animal{
+
+    void bark(){
+        System.out.println(name + " is barking");
+    }
+
 }
