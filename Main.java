@@ -1,24 +1,27 @@
 public class Main{
     public static void main(String[] args) {
-        Mons m1 = new Mons();
-        Mons m2 = new Mons();
-        Mons m3 = new Mons();
-        Mons m4 = new Mons();
-                
-        System.out.println("Monsters: " + Mons.monsters);
+        Monster m1 = new Monster();
+        System.out.println("----------------------------------");
+        Monster m2 = new Monster();
     }
 }
 
-class Mons{
-    static int monsters;
+class Monster {
 
+    static int count;
+
+    // SIB
     static {
-        System.out.println("Static block executed");
-        monsters = 2;
-
-    }
-    public Mons(){
-        System.out.println("Constructor executed");
+        System.out.println("SIB");
+        count = 10;
     }
 
+    // IIB
+    {
+        System.out.println("IIB");
+    }
+
+    Monster() {
+        System.out.println("Constructor");
+    }
 }
