@@ -1,27 +1,22 @@
 public class Main{
     public static void main(String[] args) {
-
         Dog dog = new Dog();
-        dog.name = "Tommy";
-        dog.eat();
-        dog.bark();
+        dog.sound();
+      
         
     }
 }
 
 class Animal{
-    String name;
-
-    void eat(){
-        System.out.println(name + " is eating");
+    void sound(){
+        System.out.println("Animal makes a sound");
     }
 
 }
 
 class Dog extends Animal{
-
-    void bark(){
-        System.out.println(name + " is barking");
+    @Override 
+    void sound(){
+        System.out.println("Dog barks");
     }
-
 }
