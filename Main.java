@@ -1,19 +1,17 @@
 public class Main{
     public static void main(String[] args) {
         Monster monster = new Monster();
-        monster.setName("John");
-        monster.displayName();
+        monster.name = "Goblin";
+        System.out.println(monster.name);
+
     }
 }
 
 class Monster{
-    private String name;
+    public String name;
 
     public void setName(String name){
         this.name = name;
     }
 
-    public void displayName(){
-        System.out.println("Monster's name is: " + name);
-    }
 }
