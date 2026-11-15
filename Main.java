@@ -1,40 +1,62 @@
 public class Main{
     public static void main(String[] args) {
-        Bicycle bike1 = new Bicycle(10);
-        Bicycle bike2 = new Bicycle(20);
-        Bicycle bike3 = new Bicycle(30);
 
-        System.out.println("Bike 1 ID: " + bike1.getId());
-        System.out.println("Bike 2 ID: " + bike2.getId());  
-        System.out.println("Bike 3 ID: " + bike3.getId());
+        // Calling static method from static context
+        Mons.test();
 
-        System.out.println("Total number of bicycles: " + Bicycle.getNumOfBicycles());  // for static method we do not create an object to call it
+        // Calling static method from non static context
+        Mons1.show();
+
+        // Calling non static method from static context
+        Mons2.test();
+
+
 
     }
 }
 
-// static variable and method
-class Bicycle{
-    private int speed;
-    private int id;
+class Mons{
+    static int age = 25;    // static variable
 
-    private static int numOfBicycles = 0;
+    static void test(){ // static method
+        age = 15;   // allow to change static variable in static method
+        System.out.println("static variable wth static method: " + age);
+    }
+}
 
-    public Bicycle(int starSpeed){
-        speed = starSpeed;
 
-        numOfBicycles++;
-        id = numOfBicycles;
+class Mons1{
+    int age = 25; // non static variable
+    private static int Age = 30;
 
+    public static void show(){  // static method
+        System.out.println("Age: " + Age);
+
+        
+        Mons1 ob = new Mons1();
+        ob.age = 10;    //  allow with object of class
+        System.out.println("Age: " + ob.age);
     }
 
-    public int getId(){
-        return id;
+}
+
+
+// Non static method can not be called in static method directly, we need to create object of class to call non static method
+class Mons2{
+    public void setDetails(){
+        System.out.println("This is non static method");
     }
 
-    public static int getNumOfBicycles(){
-        return numOfBicycles;
+    public static void test(){
+        // setDetails(); // not allow to call non static method in static method
+
+        Mons2 ob = new Mons2(); // create object of class
+        ob.setDetails(); // allow to call non static method with object of class
+
     }
 
 
 }
+
+
+
