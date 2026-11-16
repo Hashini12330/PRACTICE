@@ -1,67 +1,25 @@
+import static java.lang.System.out;
+import java.util.Scanner;
+
 public class Main{
     public static void main(String[] args) {
-        
-        // Create an instance of the Append class
-        Append appendInstance = new Append();
-        appendInstance.append();
-
-
-        // StringBuilder example
-        SB sb = new SB();
-        sb.Sb();
-
-    
+        math ob = new math();
+        ob.MP();
         
     }
 }
 
-class Append{
 
-    String name = "Hello";
+class math{
 
-    public void append() {
+    int a = 10;
+    int b = 20;
 
-        name = name + " John";
-
-        System.out.println(name);
+    public void MP(){
+        System.out.println(Math.max(a, b));
+        System.out.println(Math.min(a, b));
+        System.out.println((int)Math.sqrt(25));
     }
-
-}
-
-
-
-class SB{
-
-    public void Sb(){
-        
-        StringBuilder sb = new StringBuilder();
-
-        // append "Hello" to the StringBuilder
-        sb.append("Hello"); 
-        sb.append(" World");
-
-        System.out.println(sb);
-
-
-        // Insert a comma after "Hello"
-        sb.insert(5, ","); 
-        System.out.println(sb);
-
-
-        // delete characters
-        sb.delete(2, 4);    // "ll" only removed
-        System.out.println(sb);
-
-        // reverse
-        sb.reverse();
-        System.out.println(sb);
-
-
-
-
-
-    }
-
 
 
 }
