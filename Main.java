@@ -1,31 +1,24 @@
 public class Main{
     public static void main(String[] args) {
-        Dog d = new Dog();
-        d.name = "Tom";
-        d.setAge(5);
-        d.show();
+        Animal.show();
+        Dog.show();
+        
 
     }
 }
 
 
+ 
 class Animal{
-    protected String name;
+    public static void show(){
+        System.out.println("Animal");
+    }
 
 }
 
 class Dog extends Animal{
-    private int age;
-
-    public void show(){
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-    }
-
-    public void setAge(int age){
-        this.age = age;
+    public static void show(){
+        System.out.println("Dog");
     }
 
 }
-
-
