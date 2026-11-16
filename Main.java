@@ -1,25 +1,26 @@
 public class Main{
     public static void main(String[] args) {
-        
+
         Dog d = new Dog();
-        d.sound();
+        d.run();
+    
 
     }
 }
 
-// abstract
 
-abstract class Animal{
-    abstract void sound();
+// eclips
+class Animal{
 
 }
 
-class Dog extends Animal{
-    @Override 
-    void sound(){
-        System.out.println("Dog barks");
+interface RunnableTask{ // not Runnable with Thread
+    void run(); // method without body
+}
+
+class Dog extends Animal implements RunnableTask{
+
+    public void run(){  // here eed modifier
+        System.out.println("Dog runns");
     }
-
 }
-
-
