@@ -1,25 +1,33 @@
-import static java.lang.System.out;
 import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
-        math ob = new math();
-        ob.MP();
+        Sc s = new Sc();
+        s.scnner();
+    }
+}
+
+
+
+class Sc{
+
+    public void scnner(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+
+        String name = scanner.nextLine();
+        String name1 = scanner.next();
+
+        // read line
+        System.out.println("His name is: " + name);     // rads one word
+
+        System.out.println("His name is: " + name1);    // read whole lines
+
+        // close scanner
+        scanner.close();
         
     }
-}
-
-
-class math{
-
-    int a = 10;
-    int b = 20;
-
-    public void MP(){
-        System.out.println(Math.max(a, b));
-        System.out.println(Math.min(a, b));
-        System.out.println((int)Math.sqrt(25));
-    }
-
 
 }
+ 
