@@ -1,26 +1,31 @@
 public class Main{
     public static void main(String[] args) {
-
         Dog d = new Dog();
-        d.run();
-    
+        d.name = "Tom";
+        d.setAge(5);
+        d.show();
 
     }
 }
 
 
-// eclips
 class Animal{
+    protected String name;
 
 }
 
-interface RunnableTask{ // not Runnable with Thread
-    void run(); // method without body
-}
+class Dog extends Animal{
+    private int age;
 
-class Dog extends Animal implements RunnableTask{
-
-    public void run(){  // here eed modifier
-        System.out.println("Dog runns");
+    public void show(){
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
     }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
 }
+
+
