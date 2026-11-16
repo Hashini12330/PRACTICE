@@ -1,21 +1,25 @@
 public class Main{
     public static void main(String[] args) {
         
-        MyClass cl = new MyClass();
-        cl.display();   
+        Dog d = new Dog();
+        d.sound();
 
     }
 }
 
+// abstract
 
-// interface
-interface MyInterface{
-    void display(); // method without body
+abstract class Animal{
+    abstract void sound();
 
 }
 
-class MyClass implements MyInterface{
-    public void display(){
-        System.out.println("Hello Java");
-    };
+class Dog extends Animal{
+    @Override 
+    void sound(){
+        System.out.println("Dog barks");
+    }
+
 }
+
+
