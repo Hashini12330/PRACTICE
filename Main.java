@@ -1,32 +1,23 @@
 public class Main{
     public static void main(String[] args) {
         
-        // super   
-        Dog d = new Dog("Tom");
+        Dog d = new Dog();
         d.show();
-        
-
 
     }
 }
 
-// super
-class Animal{
-    String name;
 
-    Animal(String name){
-        this.name = name;
+class Animal{
+    public void sound(){
+        System.out.println("baw baw");
     }
 
 }
 
 class Dog extends Animal{
-    Dog(String name){
-        super(name);
-        
-    }
-
-    void show(){
-        System.out.println("Nmme: " + name);
+    public void show(){
+        super.sound();
+        System.out.println("Show sound");
     }
 }
