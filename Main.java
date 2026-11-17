@@ -1,29 +1,33 @@
 public class Main{
     public static void main(String[] args) {
         
-        // super   
+        // call default method
         Dog d = new Dog();
+        d.sound();
+
+        Animal.information();
+
+
 
 
     }
 }
 
-// super
-class Animal{
-    Animal(){
-        System.out.println("Animal Constructor show without super");    // In Java, even if you don't write super(), Java automatically calls the parent class's constructor.
+ 
+interface Animal{
+    default void sound(){
+        System.out.println("Default animal sound");
     }
 
-    public void check(){
-        System.out.println("Not show without super");
+    static void information(){
+        System.out.println("This is an animal");
     }
+
 
 }
 
-class Dog extends Animal{
-    Dog(){
-        super();
-        super.check();    // here without super can show parent constructor
-        System.out.println("Dog Constructor show");
-    }
+class Dog implements Animal{
+
+    // No need to write sound() here
+
 }
